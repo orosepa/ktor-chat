@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <head>
         <title>Chat</title>
         <link rel="stylesheet" href="/styles.css" type="text/css">
@@ -35,8 +36,8 @@
         <input type="submit" value="Send" class="submit_btn"/>
     </form>
 </div>
-<p id="chatId" class="info">Your chat UUID is ${chat_id}</p>
+<p id="chat_id">Your chat UUID is ${chat_id}</p>
 <script  src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
-<script type="text/javascript" src="/scripts/app.js"> </script>
+<script type="text/javascript" src="/static/app.js"> </script>
 </body>
 </html>

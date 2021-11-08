@@ -5,14 +5,15 @@ import kotlinx.css.Float
 import kotlinx.css.properties.TextDecoration
 
 fun CSSBuilder.chatStylesheet() {
+
     body {
         fontFamily = "'Poppins', sans-serif"
         display = Display.flex
         flexDirection = FlexDirection.column
         justifyContent = JustifyContent.center
         alignItems = Align.center
-        minHeight = LinearDimension("100vh")
-        fontSize = LinearDimension("1.5rem")
+        height = LinearDimension("100vh")
+        fontSize = LinearDimension("4vh")
         backgroundColor = Color("#222222")
         overflow = Overflow.hidden
     }
@@ -24,7 +25,7 @@ fun CSSBuilder.chatStylesheet() {
     }
     rule(".form__field") {
         fontFamily = "inherit"
-        fontSize = LinearDimension("150%")
+        fontSize = LinearDimension("5vh")
         width = LinearDimension("50vw")
         border = "0"
         borderBottom = "2px solid #9b9b9b"
@@ -34,19 +35,19 @@ fun CSSBuilder.chatStylesheet() {
         background = "transparent"
         marginBottom = LinearDimension("10vh")
     }
-    rule(".form__field::placeholder") { fontSize = LinearDimension("100%") }
+    rule(".form__field::placeholder") { fontSize = LinearDimension("5vh") }
     rule("a") {
         color = Color.blueViolet
         textDecoration = TextDecoration.none
-        fontSize = LinearDimension("100%")
+        fontSize = LinearDimension("4vw")
     }
     rule(".messages_container") {
-        width = LinearDimension("60vw")
-        height = LinearDimension("40vw")
+        width = LinearDimension("80vw")
+        height = LinearDimension("70vh")
         color = Color.lightGray
         border = "solid white"
         borderRadius = LinearDimension("30px")
-        fontSize = LinearDimension("1.2rem")
+        fontSize = LinearDimension("3vw")
         overflow = Overflow.hidden
     }
     rule(".messages_list") {
@@ -56,7 +57,6 @@ fun CSSBuilder.chatStylesheet() {
     }
     rule(".chatbox") {
         height = LinearDimension("18%")
-        fontSize = LinearDimension("1.2rem")
         justifyContent = JustifyContent.left
         padding = "10px"
         borderTop = "solid white"
@@ -68,10 +68,11 @@ fun CSSBuilder.chatStylesheet() {
         float = Float.left
         margin = "0 0 0 0"
         borderBottom = "0"
+        fontSize = LinearDimension("3vw")
     }
     rule(".submit_btn") {
         fontFamily = "'Poppins', sans-serif"
-        fontSize = LinearDimension("1.2rem")
+        fontSize = LinearDimension("4vh")
         width = LinearDimension("20%")
         height = LinearDimension("70%")
         borderRadius = LinearDimension("10px")
@@ -81,6 +82,7 @@ fun CSSBuilder.chatStylesheet() {
     }
     rule(".message") {
         width = LinearDimension("inherit")
+        height = LinearDimension.auto
         position = Position.relative
         display = Display.flex
         alignItems = Align.flexStart
@@ -90,31 +92,37 @@ fun CSSBuilder.chatStylesheet() {
         paddingLeft = LinearDimension("5vw")
         paddingRight = LinearDimension("5vw")
         paddingTop = LinearDimension("1vw")
-        wordWrap = WordWrap.breakWord
+        wordBreak = WordBreak.breakWord
     }
     rule(".info") {
         position = Position.relative
-        width = LinearDimension("50vw")
-        height = LinearDimension("1.5vw")
+        width = LinearDimension("90%")
         display = Display.flex
         flexDirection = FlexDirection.row
+        fontSize = LinearDimension("4vh")
     }
     rule(".msg_from") {
         fontWeight = FontWeight.bold
+        color = Color.blueViolet
     }
     rule(".msg_time") {
         position = Position.absolute
         right = LinearDimension("0")
-        alignSelf = Align.flexEnd
+//        alignSelf = Align.flexEnd
         color = Color.gray
 
     }
     rule(".msg_text") {
-        position = Position.absolute
-        display = Display.block
         bottom = LinearDimension("1vw")
-        marginTop = LinearDimension("1")
-        fontSize = LinearDimension("1rem")
+        marginTop = LinearDimension("1vw")
+        fontSize = LinearDimension("4vh")
+    }
+    rule("#chat_id") { fontSize = LinearDimension("2.5vw") }
 
+    media("(max-width: 600px)") {
+        rule(".info, .msg_text, .submit_btn") { fontSize = LinearDimension("4vw") }
+        rule(".form__field, .form__field::placeholder, a") { fontSize = LinearDimension("5vw") }
+        rule("#chat_id") { fontSize = LinearDimension("3vw") }
+        rule(".messages_container") { height = LinearDimension("80vh")}
     }
 }

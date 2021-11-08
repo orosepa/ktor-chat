@@ -10,7 +10,7 @@ fun Routing.viewToolsRouting() {
     get("/styles.css") {
         call.respondCss { chatStylesheet() }
     }
-    static("/scripts") {
+    static("/static") {
         resources("scripts")
     }
 }
