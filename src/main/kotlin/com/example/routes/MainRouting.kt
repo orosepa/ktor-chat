@@ -1,8 +1,6 @@
 package com.example.routes
 
-import com.example.config.respondCss
 import com.example.models.Chat
-import com.example.views.chatStylesheet
 import com.example.views.mainView
 import io.ktor.application.*
 import io.ktor.html.*

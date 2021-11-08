@@ -1,5 +1,6 @@
 <#-- @ftlvariable name="entries" type="kotlin.collections.List<com.example.models.Message>" -->
 <#-- @ftlvariable name="chat_name" type="String" -->
+<#-- @ftlvariable name="chat_id" type="String" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +35,7 @@
         <input type="submit" value="Send" class="submit_btn"/>
     </form>
 </div>
-<p id="chatId" class="info"></p>
+<p id="chatId" class="info">Your chat UUID is ${chat_id}</p>
 <script  src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"> </script>
 <script type="text/javascript" src="/scripts/app.js"> </script>
 </body>

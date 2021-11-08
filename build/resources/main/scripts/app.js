@@ -2,7 +2,6 @@ $(function(){
     let socket = null;
     const msgBox = $("#chatbox #msg_text");
     const messages = $("#list_msg");
-    $("#chatId").innerHTML = window.location.pathname.split("/")[2]
     $("#chatbox").submit(function(){
         if (!msgBox.val()) return false;
         if (!socket) {

@@ -61,7 +61,7 @@ fun Routing.chatRouting() {
             }
 
             call.respond(FreeMarkerContent("chat.ftl",
-                mapOf("entries" to msgBuffer, "chat_name" to chatName), ""))
+                mapOf("entries" to msgBuffer, "chat_name" to chatName, "chat_id" to chatId.toString()), ""))
         }
         post("{id}") {
             name = call.receiveParameters()["name"]
