@@ -1,8 +1,9 @@
-package com.example.plugins
+package com.example.config
 
 import com.example.routes.chatRouting
 import com.example.routes.creationRouting
 import com.example.routes.mainRouting
+import com.example.routes.viewToolsRouting
 import freemarker.cache.ClassTemplateLoader
 import freemarker.core.HTMLOutputFormat
 import io.ktor.routing.*
@@ -29,5 +30,6 @@ fun Application.configureRouting() {
         mainRouting()
         creationRouting()
         chatRouting()
+        viewToolsRouting()
     }
 }

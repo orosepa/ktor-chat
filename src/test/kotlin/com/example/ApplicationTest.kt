@@ -1,21 +1,9 @@
 package com.example
 
-import io.ktor.routing.*
+import com.example.config.configureRouting
 import io.ktor.http.*
-import freemarker.cache.*
-import io.ktor.freemarker.*
-import io.ktor.html.*
-import kotlinx.html.*
-import kotlinx.css.*
-import io.ktor.http.cio.websocket.*
-import io.ktor.websocket.*
-import java.time.*
-import io.ktor.application.*
-import io.ktor.response.*
-import io.ktor.request.*
 import kotlin.test.*
 import io.ktor.server.testing.*
-import com.example.plugins.*
 
 class ApplicationTest {
     @Test

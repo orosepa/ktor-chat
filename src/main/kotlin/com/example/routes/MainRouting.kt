@@ -26,7 +26,4 @@ fun Route.mainRouting() {
         else
             call.respondRedirect("/chat/$chatId")
     }
-    get("/styles.css") {
-        call.respondCss { chatStylesheet() }
-    }
 }
