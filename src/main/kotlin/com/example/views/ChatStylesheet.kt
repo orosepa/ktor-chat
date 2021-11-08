@@ -39,7 +39,7 @@ fun CSSBuilder.chatStylesheet() {
     rule("a") {
         color = Color.blueViolet
         textDecoration = TextDecoration.none
-        fontSize = LinearDimension("4vw")
+        fontSize = LinearDimension("2.5vw")
     }
     rule(".messages_container") {
         width = LinearDimension("80vw")
@@ -108,7 +108,6 @@ fun CSSBuilder.chatStylesheet() {
     rule(".msg_time") {
         position = Position.absolute
         right = LinearDimension("0")
-//        alignSelf = Align.flexEnd
         color = Color.gray
 
     }
