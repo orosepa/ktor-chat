@@ -1,5 +1,6 @@
 package com.example.config
 
+import com.example.DBInfo
 import com.example.models.Chats
 //import com.example.models.Connections
 import com.example.models.Messages
@@ -11,10 +12,7 @@ import org.jetbrains.exposed.sql.addLogger
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun Application.initializeDb() {
-    Database.connect("jdbc:postgresql://localhost:5432/ktor-chat-db",
-        driver = "org.postgresql.Driver",
-        user = "user",
-        password = "password")
+    Database.connect(url = DBInfo.URI)
 
     transaction {
         addLogger(StdOutSqlLogger)
