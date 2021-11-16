@@ -7,6 +7,7 @@ import io.ktor.http.cio.websocket.*
 import io.ktor.routing.*
 import io.ktor.websocket.*
 import org.jetbrains.exposed.sql.transactions.transaction
+import java.time.Clock
 import java.time.LocalDateTime
 import java.util.*
 
@@ -28,7 +29,7 @@ fun Routing.configureWebsockets() {
                     Message.new {
                         chat = Chat.findById(UserObject.chatId!!)!!
                         from = thisConnection.name!!
-                        time = LocalDateTime.now()
+                        time = LocalDateTime.now(Clock.systemUTC())
                         text = receivedText
                     }
                 }
