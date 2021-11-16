@@ -11,10 +11,13 @@ import org.jetbrains.exposed.sql.addLogger
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun Application.initializeDb() {
-    Database.connect(url = "jdbc:postgresql://${DBInfo.HOST}:${DBInfo.PORT}/${DBInfo.DATABASE}",
-        driver = "org.postgresql.Driver",
-        user = DBInfo.USER,
-        password = DBInfo.PASSWORD)
+
+//    Database.connect(url = "jdbc:postgresql://${DBInfo.HOST}:${DBInfo.PORT}/${DBInfo.DATABASE}",
+//        driver = "org.postgresql.Driver",
+//        user = DBInfo.USER,
+//        password = DBInfo.PASSWORD)
+
+    Database.connect(url = System.getenv("DATABASE_URL"))
 
     transaction {
         addLogger(StdOutSqlLogger)
