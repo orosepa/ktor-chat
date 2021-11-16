@@ -1,6 +1,5 @@
 package com.example.config
 
-import com.example.DBInfo
 import com.example.models.Chats
 //import com.example.models.Connections
 import com.example.models.Messages
@@ -12,7 +11,10 @@ import org.jetbrains.exposed.sql.addLogger
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun Application.initializeDb() {
-    Database.connect(url = DBInfo.URI)
+    Database.connect(url = "jdbc:postgresql://${DBInfo.HOST}:${DBInfo.PORT}/${DBInfo.DATABASE}",
+        driver = "org.postgresql.Driver",
+        user = DBInfo.USER,
+        password = DBInfo.PASSWORD)
 
     transaction {
         addLogger(StdOutSqlLogger)

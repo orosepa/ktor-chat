@@ -1,4 +1,4 @@
-package com.example
+package com.example.config
 
 object DBInfo {
     val HOST: String = "ec2-54-195-246-55.eu-west-1.compute.amazonaws.com"
