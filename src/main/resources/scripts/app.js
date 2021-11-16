@@ -15,7 +15,7 @@ $(function(){
     if (!window["WebSocket"]) {
         alert("Error: Your browser does not support web  sockets.")
     } else {
-        socket = new WebSocket("ws://ktor-chat-mirea.herokuapp.com/webs");
+        socket = new WebSocket("wss://ktor-chat-mirea.herokuapp.com/webs");
         socket.onclose = function() {
             alert("Connection has been closed.");
         }
