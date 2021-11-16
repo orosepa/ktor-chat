@@ -17,7 +17,11 @@ fun Application.initializeDb() {
 //        user = DBInfo.USER,
 //        password = DBInfo.PASSWORD)
 
-    Database.connect(url = System.getenv("DATABASE_URL"))
+//    Database.connect(url = System.getenv("DATABASE_URL"))
+
+    val url = "jdbc:postgresql://${System.getenv("DATABASE_HOST")}:${System.getenv("DATABASE_PORT")}/${System.getenv("DATABASE_NAME")}"
+    println(url)
+    Database.connect(url, driver = "org.postgresql.Driver", user = System.getenv("DATABASE_USER"), password = System.getenv("DATABASE_PASSWORD"))
 
     transaction {
         addLogger(StdOutSqlLogger)
