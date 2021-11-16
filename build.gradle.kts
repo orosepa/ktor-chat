@@ -42,5 +42,8 @@ dependencies {
     testImplementation("io.insert-koin:koin-test:$koinVersion")
     implementation("io.insert-koin:koin-ktor:$koinVersion")
     implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
+}
 
+tasks.create("stage") {
+    dependsOn("installDist")
 }
