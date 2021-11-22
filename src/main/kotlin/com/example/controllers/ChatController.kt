@@ -1,4 +1,4 @@
-package com.example.routes
+package com.example.controllers
 
 import com.example.config.UserObject
 import com.example.models.Chat
