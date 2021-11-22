@@ -1,6 +1,7 @@
 package com.example.config
 
 import com.example.controllers.*
+import com.example.views.viewToolsRouting
 import freemarker.cache.ClassTemplateLoader
 import freemarker.core.HTMLOutputFormat
 import io.ktor.routing.*

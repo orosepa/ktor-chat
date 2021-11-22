@@ -1,4 +1,4 @@
-package com.example.controllers
+package com.example.views
 
 import com.example.config.respondCss
 import com.example.views.chatStylesheet
